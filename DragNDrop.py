@@ -1,24 +1,8 @@
-import time
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver import ActionChains
-
-
-class Demodragndrop():
-    def demo_dragndrop(self):
-        driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
-        driver.get("https://jqueryui.com/droppable/")
-        driver.maximize_window()
-        time.sleep(2)
-        driver.switch_to.frame(driver.find_element(By.XPATH, "//iframe[@class='demo-frame']"))
-        dragelem = driver.find_element(By.XPATH, "//div[@id='draggable']")
-        dropelem = driver.find_element(By.XPATH, "//div[@id='droppable']")
-        #ActionChains(driver).drag_and_drop(dragelem, dropelem).perform()\
-        ActionChains(driver).drag_and_drop_by_offset(dragelem, 50, 30).perform()
-        time.sleep(3)
-
-
-ddrag = Demodragndrop()
-ddrag.demo_dragndrop()
+driver = webdriver.Chrome('C:/Users/Narine_Sirunyan/Desktop/Exercise Files/Source Code/chromedriver')
+driver.maximize_window()
+driver.get('http://www.dhtmlgoodies.com/scripts/drag-drop-custom/demo-drag-drop-3.html')
+source = driver.find_element_by_xpath('//*[@id="box7"]')
+dest = driver.find_element_by_xpath('//*[@id="box107"]')
+actions = ActionChains(driver)
+actions.drag_and_drop(source, dest).perform()
