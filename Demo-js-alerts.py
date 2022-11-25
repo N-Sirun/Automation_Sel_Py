@@ -26,11 +26,9 @@ class Demoalert():
 
         # Send text in alert
         driver.find_element(By.XPATH, "//button[normalize-space()='Try it']").click()
-        time.sleep(3)
         print(driver.switch_to.alert.text)
         driver.switch_to.alert.send_keys("Nana")
         driver.switch_to.alert.accept()
-        time.sleep(3)
 
 
 dalert = Demoalert()

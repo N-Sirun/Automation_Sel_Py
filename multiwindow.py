@@ -8,12 +8,13 @@ class Demomultiplewindow():
     def demo_window(self):
         driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
         driver.get("https://www.yatra.com/")
+        driver.implicitly_wait(6)
         driver.maximize_window()
         driver.find_element(By.XPATH, "//a[@href='https://www.yatra.com/offer/details/icici-bank-credit-card-offers']//div[@class='image-holder']//img[@alt='Flat 12% OFF (up to Rs 1,500)']").click()
 
         parent_handle = driver.current_window_handle
         print(parent_handle)
-        time.sleep(4)
+
         all_handles = driver.window_handles
         print(all_handles)
         for handle in all_handles:

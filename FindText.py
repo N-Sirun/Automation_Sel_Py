@@ -7,9 +7,11 @@ class DemoGetText():
     def demo_gettext(self):
         driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
         driver.get("https://rate.am/")
-        text = driver.find_element(By.XPATH, "//a[contains(text(),'Ընտրեք Ձեզ ամենամոտ մասնաճյուղը և խնայեք Ձեր ժաման')]").text
+        driver.implicitly_wait(6)
+        text1 = driver.find_element(By.XPATH, "//a[contains(text(),'Ընտրեք Ձեզ ամենամոտ մասնաճյուղը և խնայեք Ձեր ժաման')]").text
         text1 = driver.find_element(By.LINK_TEXT, "Արդշինբանկ").text
         print(text1)
-        time.sleep(4)
+
+
 findbyid = DemoGetText()
 findbyid.demo_gettext()

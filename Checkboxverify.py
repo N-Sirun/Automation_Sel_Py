@@ -8,7 +8,7 @@ class Demodisplayed():
         driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
         driver.get("https://www.w3schools.com/howto/howto_js_display_checkbox_text.asp")
         driver.find_element(By.ID, "myCheck").click()
-        time.sleep(2)
+        driver.implicitly_wait(6)
         var1 = driver.find_element(By.ID, "myCheck").is_selected()
         print(var1)
 

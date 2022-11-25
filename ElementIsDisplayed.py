@@ -9,8 +9,8 @@ class Demodisplayed():
         driver.get("https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp")
         elem = driver.find_element(By.XPATH, "//div[@id='myDIV']").is_displayed()
         print(elem)
+        driver.implicitly_wait(6)
         driver.find_element(By.XPATH, "//button[normalize-space()='Toggle Hide and Show']").click()
-        time.sleep(2)
         elem1 = driver.find_element(By.XPATH, "//div[@id='myDIV']").is_displayed()
         print(elem1)
 

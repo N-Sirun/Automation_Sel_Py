@@ -9,7 +9,8 @@ class DemoFindElementByXPath():
         driver.get("https://rate.am/")
         element = driver.find_element(By.XPATH, "//a[contains(text(),'Վարկային կազմակերպություններ')]")
         element.click()
-        time.sleep(4)
+        driver.implicitly_wait(6)
+
 findbyid = DemoFindElementByXPath()
 findbyid.locate_by_id_demo()
 
