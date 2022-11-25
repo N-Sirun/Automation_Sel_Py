@@ -11,21 +11,20 @@ class Democlicks():
         driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
         driver.get("https://demo.guru99.com/test/simple_context_menu.html")
         driver.maximize_window()
+        driver.implicitly_wait(6)
         # Right Click
         achains = ActionChains(driver)
         elem1 = driver.find_element(By.XPATH, "//span[@class='context-menu-one btn btn-neutral']")
         achains.context_click(elem1).perform()
-        time.sleep(3)
         driver.find_element(By.XPATH, "//span[normalize-space()='Delete']").click()
         driver.switch_to.alert.accept()
-        time.sleep(4)
 
         # Double click
         bchains = ActionChains(driver)
         elem2 = driver.find_element(By.XPATH, "//button[normalize-space()='Double-Click Me To See Alert']")
         bchains.double_click(elem2).perform()
         driver.switch_to.alert.accept()
-        time.sleep(3)
+
 
 
 dclick = Democlicks()

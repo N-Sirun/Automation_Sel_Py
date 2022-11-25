@@ -8,16 +8,12 @@ class DemodropdownSelect():
     def demo_dropdown(self):
         driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
         driver.get("https://www.salesforce.com/au/form/signup/freetrial-sales/")
+        driver.implicitly_wait(6)
         dropdwn = driver.find_element(By.NAME, "UserTitle")
-        time.sleep(2)
         dd = Select(dropdwn)
-        time.sleep(2)
         dd.select_by_index(1)
-        time.sleep(2)
         dd.select_by_visible_text("Customer Service Manager")
-        time.sleep(2)
         dd.select_by_value("Marketing_PR_Manager_ANZ")
-        time.sleep(2)
 
 dropdwn_check1 = DemodropdownSelect()
 dropdwn_check1.demo_dropdown()

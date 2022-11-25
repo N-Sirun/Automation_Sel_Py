@@ -8,7 +8,7 @@ class DemoFindElementByID():
         driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
         driver.get("https://secure.yatra.com/social/common/yatra/signin.htm")
         driver.find_element(By.ID, 'login-input').send_keys('test454544l@test.com')
-        time.sleep(4)
+        driver.implicitly_wait(6)
 findbyid = DemoFindElementByID()
 findbyid.locate_by_id_demo()
 

@@ -12,7 +12,6 @@ class Demoscreenshot():
         continue1 = driver.find_element(By.XPATH, "//button[@id='login-continue-btn']")
         continue1.screenshot(".\\DemoScreen.png")
         continue1.click()
-        time.sleep(4)
         driver.get_screenshot_as_file("C:\\Users\\Narine_Sirunyan\\new.png")
         driver.save_screenshot(".\\ErrorScreen.png")
 

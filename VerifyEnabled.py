@@ -7,6 +7,7 @@ class Demodisabled():
     def demo_disabled(self):
         driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
         driver.get("https://training.openspan.com/login")
+        driver.implicitly_wait(6)
         button_enabled = driver.find_element(By.XPATH, "//input[@id='login_button']").is_enabled()
         print(button_enabled)
 new_disable = Demodisabled()
